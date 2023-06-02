@@ -22,7 +22,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
             <SideBarSkeleton />
           </ListItem>
         ))}
-      {data.map((genre) => (
+      {data.map((genre, index) => (
         <ListItem key={genre.id} paddingY="5px">
           <HStack>
             <Image
@@ -36,7 +36,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
               fontSize="lg"
               variant="link"
             >
-              {genre.name}
+              {index === 11 ? genre.name.slice(10) : genre.name}
             </Button>
           </HStack>
         </ListItem>
